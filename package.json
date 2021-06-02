@@ -1,0 +1,19 @@
+{
+  "name": "db-builder",
+  "version": "1.0.0",
+  "bin": {
+    "padar": "index.js"
+  },
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "mysql2": "^2.2.5"
+  }
+}
