@@ -1,5 +1,9 @@
 # Padar Db Table Builder
 
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/15572553/120489300-94aa5b00-c3c8-11eb-90d3-7ed2cc51bf91.png">
+</p>
+
 Small and very useful mysql database table generator
 
 ## Getting started
