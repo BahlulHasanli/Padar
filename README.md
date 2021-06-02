@@ -1,6 +1,6 @@
-# MatchLib
+# Padar Db Table Builder
 
-A simple pattern matching library
+Small and very useful database table generator
 
 ## Getting started
 
