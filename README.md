@@ -28,22 +28,6 @@ module.exports = connection;
 
 ```
 
-```javascript 
-// connection.js
-
-const { createPool } = require('mysql2');
-
-const connection = createPool({
-  host: 'localhost',
-  user: 'root',
-  password: '',
-  database: 'test_db_name',
-});
-
-module.exports = connection;
-
-```
-
 ```javascript
 // schema.js
 
