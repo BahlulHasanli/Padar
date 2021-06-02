@@ -2,7 +2,7 @@
   "name": "db-builder",
   "version": "1.0.0",
   "bin": {
-    "padar": "index.js"
+    "padar": "./index.js"
   },
   "description": "",
   "main": "index.js",
