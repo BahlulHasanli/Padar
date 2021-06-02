@@ -33,10 +33,7 @@ const migrate = () => {
       await promisePool
         .query(table)
         .then((_) => {
-          fs.appendFileSync(
-            `${path.join(__dirname, 'migrates')}/migrates.sql`,
-            table
-          );
+          fs.appendFileSync(`${path.resolve('migrates')}/migrates.sql`, table);
 
           console.log(`CREATED: ${table}`.green);
         })
