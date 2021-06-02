@@ -4,7 +4,9 @@ Small and very useful database table generator
 
 ## Getting started
 
-`npm i or yarn`
+```cli
+npm i or yarn
+```
 
 ## How do I use it?
 
@@ -42,4 +44,10 @@ const schema = [
 
 module.exports = schema;
 
+```
+
+Then you just have to start Padar
+
+```cli 
+padar create
 ```
