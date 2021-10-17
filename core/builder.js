@@ -14,7 +14,7 @@ const builder = schema.map(({ tableName, columns, primary_key, exists }) => {
     if (count - 1 === i) {
       return (line += `${col.row} ${col.type} ${nullControl(
         col.void
-      )}, CONSTRAINT PK_${primary_key[0]} PRIMARY KEY(${primary_key[1]})`);
+      )}, CONSTRAINT ${primary_key[0]} PRIMARY KEY(${primary_key[1]})`);
     }
 
     return (line += `${col.row} ${col.type} ${nullControl(col.void)}, `);
@@ -32,7 +32,7 @@ const migrate = () => {
     async (table) =>
       await promisePool
         .query(table)
-        .then((_) => {
+        .then(() => {
           fs.appendFileSync(`${path.resolve('migrates')}/migrates.sql`, table);
 
           console.log(`CREATED: ${table}`.green);
