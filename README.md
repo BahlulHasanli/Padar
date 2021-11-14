@@ -9,27 +9,24 @@ Small and very useful mysql database table generator
 ## Getting started
 
 ```cli
-npm i or yarn
+npm i -g later npm i
 ```
 
 ## How do I use it?
 
-
-```javascript 
-
+```javascript
 // connection.js
 
 const { createPool } = require('mysql2');
 
 const connection = createPool({
   host: 'localhost',
-  user: 'root',
-  password: '',
-  database: 'dbbuilder',
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME,
 });
 
 module.exports = connection;
-
 ```
 
 ```javascript
@@ -42,18 +39,18 @@ const { autoincrement, varchar, int, notnull } = types;
 const schema = [
   {
     tableName: 'customers',
-    primary_key: ['PK_Customer', 'id, customerFullName'],
-    exists: true, 
+    primary_key: ['CUSTOMER', 'id, customerFullName'],
+    exists: true,
     columns: [
-      { row: 'id', type: autoincrement(), void: notnull() }, // don't specify void if not will not be null
+      { row: 'id', type: autoincrement(), void: notnull() },
       { row: 'customerFullName', type: varchar(250) },
       { row: 'customerEmail', type: varchar(255), void: notnull() },
     ],
   },
   {
     tableName: 'users',
-    exists: false, // if you don't want to add the old table to the table with the same name
-    primary_key: ['PK_User', 'id'],
+    exists: false,
+    primary_key: ['USERS', 'id'],
     columns: [
       { row: 'id', type: autoincrement(), void: notnull() },
       { row: 'userFullName', type: varchar(250) },
@@ -62,14 +59,25 @@ const schema = [
       { row: 'phone', type: int(20) },
     ],
   },
+  {
+    tableName: 'personals',
+    exists: false,
+    primary_key: ['PERSONALS', 'id'],
+    columns: [
+      { row: 'id', type: autoincrement(), void: notnull() },
+      { row: 'personalName', type: varchar(100) },
+      { row: 'personalEmail', type: varchar(150), void: notnull() },
+      { row: 'password', type: int(10), void: notnull() },
+      { row: 'phone', type: int(10) },
+    ],
+  },
 ];
 
 module.exports = schema;
-
 ```
 
 Then you just have to start Padar
 
-```cli 
+```cli
 padar create
 ```
