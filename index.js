@@ -2,9 +2,9 @@
 
 const migrate = require('./core/builder');
 
-const args = process.argv.slice(2);
+const [PADAR] = process.argv.slice(2);
 
-switch (args[0]) {
+switch (PADAR) {
   case 'create': {
     return migrate();
   }
