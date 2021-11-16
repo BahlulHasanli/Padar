@@ -9,13 +9,7 @@ Small and very useful mysql database table generator
 ## Getting started
 
 ```cli
-npm i -g
-```
-
-continue later
-
-```cli
-npm i
+npm i -g and npm i
 ```
 
 ## How do I use it?
